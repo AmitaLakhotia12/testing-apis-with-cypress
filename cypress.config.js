@@ -1,10 +1,9 @@
 const { defineConfig } = require("cypress");
 
 module.exports = defineConfig({
+  projectId: 'io4tfr',
   e2e: {
    // supportFile: false,
-   SetupNodeEvents(on, config) {
-      // implement node event listeners here
-    },
-    },
+   baseUrl: 'https://www.rijksmuseum.nl/api/nl'
+       },
 });
