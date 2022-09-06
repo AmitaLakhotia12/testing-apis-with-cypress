@@ -1,5 +1,4 @@
 const CODE_OK = 200
-const TEXT_UNAUTHORIZED = 'Invalid key'
 const CODE_UNAUTHORIZED = 401
 
 const API_KEY = '0fiuZFh4'
@@ -15,7 +14,6 @@ describe('visit rijksmuseum website', () => {
 })
 
 describe('Rijksmuseum API `GET /collection`', () => {
-
     it('WHEN no api key THEN status IS 401', () => {
 		
 			cy.request({
@@ -62,6 +60,7 @@ describe('Rijksmuseum API `GET /collection`', () => {
                 assert.equal(response.body.count, ELEMENTS_NUMBER);
             })
 	})
+})
   
 describe('Rijksmuseum API `GET /collection/artobjectnumber', () => {
 
