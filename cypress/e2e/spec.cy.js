@@ -22,12 +22,12 @@ describe('visit rijksmuseum website', () => {
 
 describe('Rijksmuseum API `GET /collection`', () => {
 
-    it('WHEN no api key THEN code IS ' + CODE_UNAUTHORIZED, () => {
-		return request
-			.get('/collection')
-			.query(
+   it('Get all Collection', () => {
+        const CODE_UNAUTHORIZED = 401
+	const INVOLVED_MAKER = 'Rembrandt van Rijn'
+        cy.request(`/collection`).query(
                 {   
                     involvedMaker: INVOLVED_MAKER
-                })
-			.expect(CODE_UNAUTHORIZED)
-	})
+                }).expect(CODE_UNAUTHORIZED)
+        })
+  
