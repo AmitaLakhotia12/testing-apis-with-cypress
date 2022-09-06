@@ -26,6 +26,6 @@ jobs:
           paths:
             - ~/.npm
             - ~/.cache
-      - run: $(npm bin)/cypress open
+     - run: ./node_modules/.bin/cypress run
       - store_artifacts:
           path: ~/repo/api-testing-with-cypress
