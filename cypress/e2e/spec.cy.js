@@ -30,4 +30,4 @@ describe('Rijksmuseum API `GET /collection`', () => {
                     involvedMaker: INVOLVED_MAKER
                 })
 			.expect(CODE_UNAUTHORIZED)
-	});
+	})
