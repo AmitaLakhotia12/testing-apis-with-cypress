@@ -14,6 +14,8 @@ Test Scenarios covered:
   
   -> WHEN api key and Involved maker present THEN element number is 3618
   
+  -> WHEN api key and involved maker present then parsing the response json array to read the object details
+  
 # 3) Get API collection - object details
 
   -> WHEN art object number present and also api key THEN status IS 200
