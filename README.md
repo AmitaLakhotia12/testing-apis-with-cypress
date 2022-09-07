@@ -1,4 +1,4 @@
-Testing of open Rijksmuseum API using Cypress test framework for testing API requests.
+Testing of open Rijksmuseum API using Cypress test framework for testing API requests. The CI pipeline is built using the circle CI.
 
 Test Scenarios covered:
 
