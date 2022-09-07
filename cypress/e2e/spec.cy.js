@@ -5,10 +5,11 @@ const API_KEY = '0fiuZFh4'
 
 const INVOLVED_MAKER = 'Rembrandt van Rijn'
 const ELEMENTS_NUMBER = 3618
-const ART_OBJECT_NUMBER = 'SK-C-597'
+const ART_OBJECT_NUMBER = 'SK-C-5'
+
 
 describe('visit rijksmuseum website', () => {
-  it('passes', () => {
+  it('visit rijksmuseum website', () => {
     cy.visit('https://www.rijksmuseum.nl/nl/rijksstudio')
   })
 })
@@ -74,4 +75,21 @@ describe('Rijksmuseum API `GET /collection/artobjectnumber', () => {
 				expect(response.status).to.eq(CODE_OK)
 				})
 	})
-})
+	
+	it('WHEN art object number present and key is present its details like title , Object number should be present', () => {
+		cy.request({
+				method: 'GET',
+				url: '/collection/' + ART_OBJECT_NUMBER + '?key=' + API_KEY ,
+				failOnStatusCode: false}).then((response) => {
+				
+				console.log(response);
+				expect(response.body.artObject.title).to.exist
+				expect(response.body.artObject.objectNumber).to.exist
+                assert.equal(response.body.artObject.objectNumber, ART_OBJECT_NUMBER);
+				cy.log(response.body.artObject.objectNumber)
+				cy.log(response.body.artObject.title)
+				cy.log(response.body.artObject.id)
+				cy.log(response.body.artObject.webImage.url)
+            })
+			})
+		})
