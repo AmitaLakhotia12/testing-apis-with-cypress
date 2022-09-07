@@ -61,6 +61,21 @@ describe('Rijksmuseum API `GET /collection`', () => {
                 assert.equal(response.body.count, ELEMENTS_NUMBER);
             })
 	})
+	
+	it('When api key and involved maker present then parsing the response json array to read the object details', () => {
+		cy.request({
+				method: 'GET',
+				url: '/collection?key='+ API_KEY +'&involvedMaker=' + INVOLVED_MAKER,
+				failOnStatusCode: false}).then((response) => {
+			cy.log('long title is -', response.body.artObjects[0].longTitle)
+			cy.log(response.body.artObjects[0].title)
+			cy.log(response.body.artObjects[0].id)
+			cy.log(response.body.artObjects[1].longTitle)
+			cy.log(response.body.artObjects[1].title)
+			cy.log(response.body.artObjects[1].id)
+			
+	})
+})
 })
   
 describe('Rijksmuseum API `GET /collection/artobjectnumber', () => {
@@ -93,3 +108,4 @@ describe('Rijksmuseum API `GET /collection/artobjectnumber', () => {
             })
 			})
 		})
+		
