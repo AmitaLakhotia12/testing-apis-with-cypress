@@ -11,7 +11,9 @@ const ART_OBJECT_NUMBER = 'SK-C-5'
 describe('visit rijksmuseum website', () => {
   it('visit rijksmuseum website', () => {
     cy.visit('https://www.rijksmuseum.nl/nl/rijksstudio')
-  })
+	cy.url().should('include', '/nl/rijksstudio');
+	cy.url().should('equal', 'https://www.rijksmuseum.nl/nl/rijksstudio');
+})
 })
 
 describe('Rijksmuseum API `GET /collection`', () => {
@@ -62,7 +64,7 @@ describe('Rijksmuseum API `GET /collection`', () => {
             })
 	})
 	
-	it('When api key and involved maker present then parsing the response json array to read the object details', () => {
+	it('WHEN api key and involved maker present then parsing the response json array to read the object details', () => {
 		cy.request({
 				method: 'GET',
 				url: '/collection?key='+ API_KEY +'&involvedMaker=' + INVOLVED_MAKER,
