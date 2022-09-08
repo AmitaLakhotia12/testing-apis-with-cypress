@@ -2,7 +2,7 @@ Testing of open Rijksmuseum API using Cypress test framework for testing API req
 
 Test Scenarios covered:
 
-# 1) Visit rijksmuseum websit
+# 1) Visit rijksmuseum website
 
 # 2) Get API Collection
 
